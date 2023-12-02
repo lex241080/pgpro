@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+  app:
+    image: lex241080/pgpro
+    network_mode: "bridge"
+    restart: always
+    environment:
+      - UID=<UID>
+      - GID=<GID>
+    ports:
+      - 5432:5432/tcp
+    volumes:
+      - /run/postgres:/tmp
+      - ./data:/var/lib/pgpro
